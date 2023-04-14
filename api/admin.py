@@ -104,7 +104,7 @@ class ServiceAdmin(admin.ModelAdmin):
     fieldsets = (
         (
             _("Russian"),
-            {"fields": ("name_ru", "description_ru", "image", "is_active")},
+            {"fields": ("name_ru", "description_ru", "icon", "is_active")},
         ),
         (_("English"), {"fields": ("name_en", "description_en")}),
         (_("Uzbek"), {"fields": ("name_uz", "description_uz")}),
