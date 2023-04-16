@@ -70,6 +70,7 @@ class ProjectAdmin(admin.ModelAdmin):
                     "client_ru",
                     "image",
                     "category",
+                    "date",
                     "is_active",
                     "status",
                 )
