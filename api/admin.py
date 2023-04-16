@@ -56,7 +56,7 @@ class ProjectAdmin(admin.ModelAdmin):
         "is_active",
     )
     list_display_links = ("id", "name")
-    list_filter = ("is_active", "status")
+    list_filter = ("is_active", "status", "category")
     search_fields = ("name", "description", "client")
     list_per_page = 25
 
@@ -69,6 +69,7 @@ class ProjectAdmin(admin.ModelAdmin):
                     "description_ru",
                     "client_ru",
                     "image",
+                    "category",
                     "is_active",
                     "status",
                 )
