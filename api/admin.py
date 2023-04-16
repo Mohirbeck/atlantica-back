@@ -140,14 +140,14 @@ class BannerAdmin(admin.ModelAdmin):
     fieldsets = (
         (
             _("Russian"),
-            {"fields": ("title_ru", "description_ru", "image", "is_active", "order")},
+            {"fields": ("title_ru", "description_ru", "image_desktop", "image_mobile", "is_active", "order")},
         ),
         (_("English"), {"fields": ("title_en", "description_en")}),
         (_("Uzbek"), {"fields": ("title_uz", "description_uz")}),
     )
 
     def image_tag(self, obj):
-        return mark_safe(f'<img src="{obj.image.url}" width="160px" height="90px">')
+        return mark_safe(f'<img src="{obj.image_desktop.url}" width="160px" height="90px">')
 
 
 @admin.register(FooterModel)
