@@ -828,6 +828,116 @@
     }
   },
   {
+    "model": "api.reviewmodel",
+    "pk": 2,
+    "fields": {
+      "name": "Дарлин Робертсон",
+      "name_ru": "Дарлин Робертсон",
+      "name_en": "Дарлин Робертсон",
+      "name_uz": "Дарлин Робертсон",
+      "position": "Генеральный директор Globex",
+      "position_ru": "Генеральный директор Globex",
+      "position_en": "Генеральный директор Globex",
+      "position_uz": "Генеральный директор Globex",
+      "image": "reviews/Ellipse_4.png",
+      "description": "Это значит, что мы берем на себя все бизнес-процессы, требующие времени и привлекаем большое количество квалифицированного персонала! Имея команду квалифицированных менеджеров и базу готовых сотрудников по всем направлениям.",
+      "description_ru": "Это значит, что мы берем на себя все бизнес-процессы, требующие времени и привлекаем большое количество квалифицированного персонала! Имея команду квалифицированных менеджеров и базу готовых сотрудников по всем направлениям.",
+      "description_en": "This means that we take care of all business processes that require time and attract a large number of qualified personnel! Having a team of qualified managers and a base of ready-made employees in all areas.",
+      "description_uz": "Bu shuni anglatadiki, biz vaqt talab qiladigan barcha biznes jarayonlarga g'amxo'rlik qilamiz va ko'plab malakali kadrlarni jalb qilamiz! Barcha sohalarda malakali menejerlar jamoasi va tayyor xodimlar bazasiga ega bo'lish.",
+      "created_at": "2023-04-16T21:49:54.747Z",
+      "updated_at": "2023-04-16T21:49:54.747Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.reviewmodel",
+    "pk": 3,
+    "fields": {
+      "name": "Дарлин Робертсон",
+      "name_ru": "Дарлин Робертсон",
+      "name_en": "Дарлин Робертсон",
+      "name_uz": "Дарлин Робертсон",
+      "position": "Генеральный директор Globex",
+      "position_ru": "Генеральный директор Globex",
+      "position_en": "Генеральный директор Globex",
+      "position_uz": "Генеральный директор Globex",
+      "image": "reviews/Ellipse_4.png",
+      "description": "Это значит, что мы берем на себя все бизнес-процессы, требующие времени и привлекаем большое количество квалифицированного персонала! Имея команду квалифицированных менеджеров и базу готовых сотрудников по всем направлениям.",
+      "description_ru": "Это значит, что мы берем на себя все бизнес-процессы, требующие времени и привлекаем большое количество квалифицированного персонала! Имея команду квалифицированных менеджеров и базу готовых сотрудников по всем направлениям.",
+      "description_en": "This means that we take care of all business processes that require time and attract a large number of qualified personnel! Having a team of qualified managers and a base of ready-made employees in all areas.",
+      "description_uz": "Bu shuni anglatadiki, biz vaqt talab qiladigan barcha biznes jarayonlarga g'amxo'rlik qilamiz va ko'plab malakali kadrlarni jalb qilamiz! Barcha sohalarda malakali menejerlar jamoasi va tayyor xodimlar bazasiga ega bo'lish.",
+      "created_at": "2023-04-16T21:49:54.747Z",
+      "updated_at": "2023-04-16T21:49:54.747Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.reviewmodel",
+    "pk": 4,
+    "fields": {
+      "name": "Дарлин Робертсон",
+      "name_ru": "Дарлин Робертсон",
+      "name_en": "Дарлин Робертсон",
+      "name_uz": "Дарлин Робертсон",
+      "position": "Генеральный директор Globex",
+      "position_ru": "Генеральный директор Globex",
+      "position_en": "Генеральный директор Globex",
+      "position_uz": "Генеральный директор Globex",
+      "image": "reviews/Ellipse_4.png",
+      "description": "Это значит, что мы берем на себя все бизнес-процессы, требующие времени и привлекаем большое количество квалифицированного персонала! Имея команду квалифицированных менеджеров и базу готовых сотрудников по всем направлениям.",
+      "description_ru": "Это значит, что мы берем на себя все бизнес-процессы, требующие времени и привлекаем большое количество квалифицированного персонала! Имея команду квалифицированных менеджеров и базу готовых сотрудников по всем направлениям.",
+      "description_en": "This means that we take care of all business processes that require time and attract a large number of qualified personnel! Having a team of qualified managers and a base of ready-made employees in all areas.",
+      "description_uz": "Bu shuni anglatadiki, biz vaqt talab qiladigan barcha biznes jarayonlarga g'amxo'rlik qilamiz va ko'plab malakali kadrlarni jalb qilamiz! Barcha sohalarda malakali menejerlar jamoasi va tayyor xodimlar bazasiga ega bo'lish.",
+      "created_at": "2023-04-16T21:49:54.747Z",
+      "updated_at": "2023-04-16T21:49:54.747Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.reviewmodel",
+    "pk": 5,
+    "fields": {
+      "name": "Дарлин Робертсон",
+      "name_ru": "Дарлин Робертсон",
+      "name_en": "Дарлин Робертсон",
+      "name_uz": "Дарлин Робертсон",
+      "position": "Генеральный директор Globex",
+      "position_ru": "Генеральный директор Globex",
+      "position_en": "Генеральный директор Globex",
+      "position_uz": "Генеральный директор Globex",
+      "image": "reviews/Ellipse_4.png",
+      "description": "Это значит, что мы берем на себя все бизнес-процессы, требующие времени и привлекаем большое количество квалифицированного персонала! Имея команду квалифицированных менеджеров и базу готовых сотрудников по всем направлениям.",
+      "description_ru": "Это значит, что мы берем на себя все бизнес-процессы, требующие времени и привлекаем большое количество квалифицированного персонала! Имея команду квалифицированных менеджеров и базу готовых сотрудников по всем направлениям.",
+      "description_en": "This means that we take care of all business processes that require time and attract a large number of qualified personnel! Having a team of qualified managers and a base of ready-made employees in all areas.",
+      "description_uz": "Bu shuni anglatadiki, biz vaqt talab qiladigan barcha biznes jarayonlarga g'amxo'rlik qilamiz va ko'plab malakali kadrlarni jalb qilamiz! Barcha sohalarda malakali menejerlar jamoasi va tayyor xodimlar bazasiga ega bo'lish.",
+      "created_at": "2023-04-16T21:49:54.747Z",
+      "updated_at": "2023-04-16T21:49:54.747Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.reviewmodel",
+    "pk": 6,
+    "fields": {
+      "name": "Дарлин Робертсон",
+      "name_ru": "Дарлин Робертсон",
+      "name_en": "Дарлин Робертсон",
+      "name_uz": "Дарлин Робертсон",
+      "position": "Генеральный директор Globex",
+      "position_ru": "Генеральный директор Globex",
+      "position_en": "Генеральный директор Globex",
+      "position_uz": "Генеральный директор Globex",
+      "image": "reviews/Ellipse_4.png",
+      "description": "Это значит, что мы берем на себя все бизнес-процессы, требующие времени и привлекаем большое количество квалифицированного персонала! Имея команду квалифицированных менеджеров и базу готовых сотрудников по всем направлениям.",
+      "description_ru": "Это значит, что мы берем на себя все бизнес-процессы, требующие времени и привлекаем большое количество квалифицированного персонала! Имея команду квалифицированных менеджеров и базу готовых сотрудников по всем направлениям.",
+      "description_en": "This means that we take care of all business processes that require time and attract a large number of qualified personnel! Having a team of qualified managers and a base of ready-made employees in all areas.",
+      "description_uz": "Bu shuni anglatadiki, biz vaqt talab qiladigan barcha biznes jarayonlarga g'amxo'rlik qilamiz va ko'plab malakali kadrlarni jalb qilamiz! Barcha sohalarda malakali menejerlar jamoasi va tayyor xodimlar bazasiga ega bo'lish.",
+      "created_at": "2023-04-16T21:49:54.747Z",
+      "updated_at": "2023-04-16T21:49:54.747Z",
+      "is_active": true
+    }
+  },
+  {
     "model": "api.partnermodel",
     "pk": 1,
     "fields": {

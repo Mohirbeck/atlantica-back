@@ -97,7 +97,7 @@ class ProjectCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(ServiceModel)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "created_at", "updated_at", "is_active")
+    list_display = ("id", "name", "created_at", "updated_at", "is_active", "icon", )
     list_display_links = ("id", "name")
     list_filter = ("is_active",)
     search_fields = ("name", "description")
