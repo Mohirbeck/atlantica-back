@@ -125,29 +125,27 @@ class RequestAdmin(admin.ModelAdmin):
 class BannerAdmin(admin.ModelAdmin):
     list_display = (
         "image_tag",
-        "title",
         "order",
         "created_at",
         "updated_at",
         "is_active",
     )
-    list_display_links = ("title", "image_tag")
+    list_display_links = ("image_tag",)
     list_filter = ("is_active",)
     list_editable = ("order",)
-    search_fields = ("title",)
     list_per_page = 25
 
     fieldsets = (
         (
             _("Russian"),
-            {"fields": ("title_ru", "description_ru", "image_desktop", "image_mobile", "is_active", "order")},
+            {"fields": ("image_ru", "link", "order", "is_active")},
         ),
-        (_("English"), {"fields": ("title_en", "description_en")}),
-        (_("Uzbek"), {"fields": ("title_uz", "description_uz")}),
+        (_("English"), {"fields": ("image_en",)}),
+        (_("Uzbek"), {"fields": ("image_uz",)}),
     )
 
     def image_tag(self, obj):
-        return mark_safe(f'<img src="{obj.image_desktop.url}" width="160px" height="90px">')
+        return mark_safe(f'<img src="{obj.image.url}" width="160px" height="90px">')
 
 
 @admin.register(FooterModel)
@@ -222,9 +220,15 @@ class ReviewAdmin(admin.ModelAdmin):
         ),
     )
 
+
 @admin.register(BlockModel)
 class BlockAdmin(admin.ModelAdmin):
-    list_display = ("id", "title", "created_at", "updated_at", )
+    list_display = (
+        "id",
+        "title",
+        "created_at",
+        "updated_at",
+    )
     list_display_links = ("id", "title")
     search_fields = ("title", "description")
     list_per_page = 25
@@ -244,9 +248,15 @@ class BlockAdmin(admin.ModelAdmin):
         (_("Uzbek"), {"fields": ("title_uz", "description_uz")}),
     )
 
+
 @admin.register(ConsultModel)
 class ConsultAdmin(admin.ModelAdmin):
-    list_display = ("id", "title", "created_at", "updated_at", )
+    list_display = (
+        "id",
+        "title",
+        "created_at",
+        "updated_at",
+    )
     list_display_links = ("id", "title")
     search_fields = ("title", "description")
     list_per_page = 25
@@ -268,14 +278,24 @@ class ConsultAdmin(admin.ModelAdmin):
         (_("Uzbek"), {"fields": ("title_uz", "description_uz")}),
     )
 
+
 @admin.register(PartnerModel)
 class PartnerAdmin(admin.ModelAdmin):
-    list_display = ("get_image", "name", "created_at", "updated_at", )
-    list_display_links = ("get_image", "name", )
-    search_fields = ("name", )
+    list_display = (
+        "get_image",
+        "name",
+        "created_at",
+        "updated_at",
+    )
+    list_display_links = (
+        "get_image",
+        "name",
+    )
+    search_fields = ("name",)
     list_per_page = 25
 
     def get_image(self, obj):
         return mark_safe(f'<img src="{obj.image.url}" width="75px" height="75px">')
+
 
 # Path: api/serializers.py

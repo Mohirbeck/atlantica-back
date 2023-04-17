@@ -44,7 +44,8 @@ class BlockTranslationOptions(TranslationOptions):
     fields = ("title", "description")
 
 class BannerTranslationOptions(TranslationOptions):
-    fields = ("title", "description")
+    fields = ("image", )
+    required_languages = ("ru", "en", "uz")
 
 translator.register(NewsModel, NewsTranslationOptions)
 translator.register(ProjectModel, ProjectTranslationOptions)

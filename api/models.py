@@ -88,18 +88,15 @@ class RequestModel(models.Model):
         verbose_name_plural = "Заявки"
 
 class BannerModel(models.Model):
-    title = models.CharField(max_length=255, verbose_name="Заголовок", blank=True, null=True)
-    description = models.TextField(verbose_name="Описание", blank=True, null=True)
     link = models.CharField(max_length=255, verbose_name="Ссылка", blank=True, null=True)
-    image_desktop = models.ImageField(upload_to="banners", verbose_name="Изображение для десктопа")
-    image_mobile = models.ImageField(upload_to="banners", verbose_name="Изображение для мобильных")
+    image = models.ImageField(upload_to="banners", verbose_name="Изображение")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
     is_active = models.BooleanField(default=True, verbose_name="Активность")
     order = models.IntegerField(verbose_name="Порядок", default=0)
 
     def __str__(self):
-        return self.title or ''
+        return 'Баннер'
     
     class Meta:
         verbose_name = "Баннер"
