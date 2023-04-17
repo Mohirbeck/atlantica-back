@@ -4,10 +4,14 @@ from django.forms import ValidationError
 
 # Create your models here.
 
+def validate_file_extension(value):
+    if not value.name.endswith(".svg"):
+        raise ValidationError("Только SVG файлы")
+
 class ServiceModel(models.Model):
     name = models.CharField(max_length=255, verbose_name="Название услуги")
     description = RichTextUploadingField(verbose_name="Описание услуги", blank=True, null=True)
-    icon = models.ImageField(upload_to="services", verbose_name="Иконка услуги", blank=True, null=True)
+    icon = models.FileField(upload_to="services", verbose_name="Иконка услуги", blank=True, null=True, help_text="Рекомендуемый размер 64x64", validators=[validate_file_extension])
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
     is_active = models.BooleanField(default=True, verbose_name="Активность")
