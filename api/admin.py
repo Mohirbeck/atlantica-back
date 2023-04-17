@@ -100,7 +100,6 @@ class ServiceAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "created_at", "updated_at", "is_active", "icon", )
     list_display_links = ("id", "name")
     list_filter = ("is_active",)
-    list_editable = ("is_active", "icon", )
     search_fields = ("name", "description")
     list_per_page = 25
 
@@ -146,7 +145,7 @@ class BannerAdmin(admin.ModelAdmin):
     )
 
     def image_tag(self, obj):
-        return mark_safe(f'<img src="{obj.image.url}" width="160px" height="90px">')
+        return mark_safe(f'<img src="{obj.image.url}" width="210px" height="90px">')
 
 
 @admin.register(FooterModel)
@@ -296,7 +295,7 @@ class PartnerAdmin(admin.ModelAdmin):
     list_per_page = 25
 
     def get_image(self, obj):
-        return mark_safe(f'<img src="{obj.image.url}" width="75px" height="75px">')
+        return mark_safe(f'<img src="{obj.image.url}" width="75px">')
 
 
 # Path: api/serializers.py
