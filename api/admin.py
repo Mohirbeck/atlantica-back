@@ -100,6 +100,7 @@ class ServiceAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "created_at", "updated_at", "is_active", "icon", )
     list_display_links = ("id", "name")
     list_filter = ("is_active",)
+    list_editable = ("is_active", "icon", )
     search_fields = ("name", "description")
     list_per_page = 25
 
