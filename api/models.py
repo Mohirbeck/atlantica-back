@@ -71,6 +71,14 @@ class NewsModel(models.Model):
     def __str__(self):
         return self.title
     
+    @property
+    def get_latest_news(self):
+        return NewsModel.objects.filter(is_active=True).exclude(id=self.id).order_by("-created_at")[:5]
+    
+    @property
+    def get_popular_news(self):
+        return NewsModel.objects.filter(is_active=True).exclude(id=self.id).order_by("-views")[:5]
+    
     class Meta:
         verbose_name = "Новость"
         verbose_name_plural = "Новости"
