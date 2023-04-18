@@ -62,7 +62,7 @@ class NewsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NewsModel
-        exclude = ("is_active",)
+        fields = "__all__"
 
 
 class ProjectCategorySerializer(serializers.ModelSerializer):
