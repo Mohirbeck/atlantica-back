@@ -21,6 +21,8 @@ class NewsListSerializer(serializers.ModelSerializer):
     description_uz = serializers.SerializerMethodField()
 
     def get_description_ru(self, obj):
+        if obj.description_ru is None or obj.description_ru == "":
+            return ""
         soup = BeautifulSoup(obj.description_ru, "html.parser")
         if soup is None:
             return ""
@@ -28,6 +30,8 @@ class NewsListSerializer(serializers.ModelSerializer):
             return soup.text[:100]
 
     def get_description_en(self, obj):
+        if obj.description_en is None or obj.description_en == "":
+            return ""
         soup = BeautifulSoup(obj.description_en, "html.parser")
         if soup is None:
             return ""
@@ -35,6 +39,8 @@ class NewsListSerializer(serializers.ModelSerializer):
             return soup.text[:100]
 
     def get_description_uz(self, obj):
+        if obj.description_uz is None or obj.description_uz == "":
+            return ""
         soup = BeautifulSoup(obj.description_uz, "html.parser")
         if soup is None:
             return ""
@@ -87,22 +93,28 @@ class ProjectListSerializer(serializers.ModelSerializer):
     description_uz = serializers.SerializerMethodField()
 
     def get_description_ru(self, obj):
+        if obj.description_ru is None or obj.description_ru == "":
+            return ""
         soup = BeautifulSoup(obj.description_ru, "html.parser")
-        if soup is None:
+        if soup.text is None or soup.text == "":
             return ""
         else:
             return soup.text[:100]
 
     def get_description_en(self, obj):
+        if obj.description_en is None or obj.description_en == "":
+            return ""
         soup = BeautifulSoup(obj.description_en, "html.parser")
-        if soup is None:
+        if soup.text is None or soup.text == "":
             return ""
         else:
             return soup.text[:100]
 
     def get_description_uz(self, obj):
+        if obj.description_uz is None or obj.description_uz == "":
+            return ""
         soup = BeautifulSoup(obj.description_uz, "html.parser")
-        if soup is None:
+        if soup.text is None or soup.text == "":
             return ""
         else:
             return soup.text[:100]
@@ -118,6 +130,9 @@ class ProjectListSerializer(serializers.ModelSerializer):
             "status",
             "date",
             "client",
+            "client_ru",
+            "client_en",
+            "client_uz",
         )
 
 
@@ -144,6 +159,8 @@ class ServiceListSerializer(serializers.ModelSerializer):
     description_uz = serializers.SerializerMethodField()
 
     def get_description_ru(self, obj):
+        if obj.description_ru is None or obj.description_ru == "":
+            return ""
         soup = BeautifulSoup(obj.description_ru, "html.parser")
         if soup is None:
             return ""
@@ -151,6 +168,8 @@ class ServiceListSerializer(serializers.ModelSerializer):
             return soup.text[:100]
 
     def get_description_en(self, obj):
+        if obj.description_en is None or obj.description_en == "":
+            return ""
         soup = BeautifulSoup(obj.description_en, "html.parser")
         if soup is None:
             return ""
@@ -158,6 +177,8 @@ class ServiceListSerializer(serializers.ModelSerializer):
             return soup.text[:100]
 
     def get_description_uz(self, obj):
+        if obj.description_uz is None or obj.description_uz == "":
+            return ""
         soup = BeautifulSoup(obj.description_uz, "html.parser")
         if soup is None:
             return ""
