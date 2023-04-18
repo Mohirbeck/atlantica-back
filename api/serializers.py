@@ -124,14 +124,6 @@ class ProjectListSerializer(serializers.ModelSerializer):
         )
 
 
-class ProjectSerializer(serializers.ModelSerializer):
-    category = ProjectCategorySerializer(many=False, read_only=True)
-    similar_projects = ProjectListSerializer(many=True, read_only=True, source="get_similar_projects")
-
-    class Meta:
-        model = ProjectModel
-        exclude = ("is_active",)
-
 
 class ServiceListSerializer(serializers.ModelSerializer):
     description_ru = serializers.SerializerMethodField()
@@ -172,6 +164,17 @@ class ServiceListSerializer(serializers.ModelSerializer):
             "name",
             "description",
         )
+
+
+
+class ProjectSerializer(serializers.ModelSerializer):
+    category = ProjectCategorySerializer(many=False, read_only=True)
+    similar_projects = ProjectListSerializer(many=True, read_only=True, source="get_similar_projects")
+    service = ServiceListSerializer(many=False, read_only=True)
+
+    class Meta:
+        model = ProjectModel
+        exclude = ("is_active",)
 
 
 class ServiceSerializer(serializers.ModelSerializer):
