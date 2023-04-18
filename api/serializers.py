@@ -109,15 +109,15 @@ class ProjectListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProjectModel
-        fields = (
-            "id",
-            "image",
-            "name_ru",
-            "name_en",
-            "name_uz",
-            "description_ru",
-            "description_en",
-            "description_uz",
+        exclude = (
+            "is_active",
+            "description",
+            "name",
+            "service",
+            "category",
+            "status",
+            "date",
+            "client",
         )
 
 
