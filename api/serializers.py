@@ -26,14 +26,14 @@ class NewsListSerializer(serializers.ModelSerializer):
             return ""
         else:
             return soup.text[:100]
-        
+
     def get_description_en(self, obj):
         soup = BeautifulSoup(obj.description_en, "html.parser")
         if soup is None:
             return ""
         else:
             return soup.text[:100]
-        
+
     def get_description_uz(self, obj):
         soup = BeautifulSoup(obj.description_uz, "html.parser")
         if soup is None:
@@ -43,7 +43,11 @@ class NewsListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NewsModel
-        exclude = ("is_active", "description", "title", )
+        exclude = (
+            "is_active",
+            "description",
+            "title",
+        )
 
 
 class NewsSerializer(serializers.ModelSerializer):
@@ -52,13 +56,17 @@ class NewsSerializer(serializers.ModelSerializer):
 
     def get_popular_news(self, obj):
         return NewsListSerializer(
-            NewsModel.objects.filter(is_active=True).exclude(id=obj.id).order_by("-views")[:5],
+            NewsModel.objects.filter(is_active=True)
+            .exclude(id=obj.id)
+            .order_by("-views")[:5],
             many=True,
         ).data
 
     def get_latest_news(self, obj):
         return NewsListSerializer(
-            NewsModel.objects.filter(is_active=True).exclude(id=obj.id).order_by("-created_at")[:5],
+            NewsModel.objects.filter(is_active=True)
+            .exclude(id=obj.id)
+            .order_by("-created_at")[:5],
             many=True,
         ).data
 
@@ -72,24 +80,57 @@ class ProjectCategorySerializer(serializers.ModelSerializer):
         model = ProjectCategoryModel
         fields = "__all__"
 
+
 class ProjectListSerializer(serializers.ModelSerializer):
+    description_ru = serializers.SerializerMethodField()
+    description_en = serializers.SerializerMethodField()
+    description_uz = serializers.SerializerMethodField()
+
+    def get_description_ru(self, obj):
+        soup = BeautifulSoup(obj.description_ru, "html.parser")
+        if soup is None:
+            return ""
+        else:
+            return soup.text[:100]
+
+    def get_description_en(self, obj):
+        soup = BeautifulSoup(obj.description_en, "html.parser")
+        if soup is None:
+            return ""
+        else:
+            return soup.text[:100]
+
+    def get_description_uz(self, obj):
+        soup = BeautifulSoup(obj.description_uz, "html.parser")
+        if soup is None:
+            return ""
+        else:
+            return soup.text[:100]
 
     class Meta:
         model = ProjectModel
-        fields = ("id", "image")
+        fields = (
+            "id",
+            "image",
+            "name",
+        )
+
 
 class ProjectSerializer(serializers.ModelSerializer):
     category = ProjectCategorySerializer(many=False, read_only=True)
     similar_projects = serializers.SerializerMethodField()
 
     def get_similar_projects(self, obj):
-        projects = ProjectModel.objects.filter(is_active=True, category=obj.category).exclude(id=obj.id).order_by("-created_at")[:7]
+        projects = (
+            ProjectModel.objects.filter(is_active=True, category=obj.category)
+            .exclude(id=obj.id)
+            .order_by("-created_at")[:7]
+        )
         return ProjectListSerializer(projects, many=True).data
 
     class Meta:
         model = ProjectModel
         exclude = ("is_active",)
-
 
 
 class ServiceListSerializer(serializers.ModelSerializer):
@@ -103,33 +144,45 @@ class ServiceListSerializer(serializers.ModelSerializer):
             return ""
         else:
             return soup.text[:100]
-        
+
     def get_description_en(self, obj):
         soup = BeautifulSoup(obj.description_en, "html.parser")
         if soup is None:
             return ""
         else:
             return soup.text[:100]
-        
+
     def get_description_uz(self, obj):
         soup = BeautifulSoup(obj.description_uz, "html.parser")
         if soup is None:
             return ""
         else:
             return soup.text[:100]
+
     class Meta:
         model = ServiceModel
-        exclude = ("is_active", "name", "description", )
+        exclude = (
+            "is_active",
+            "name",
+            "description",
+        )
+
 
 class ServiceSerializer(serializers.ModelSerializer):
     projects = serializers.SerializerMethodField()
 
     def get_projects(self, obj):
-        return ProjectListSerializer(ProjectModel.objects.filter(is_active=True, service=obj).order_by("-created_at")[:7], many=True).data
+        return ProjectListSerializer(
+            ProjectModel.objects.filter(is_active=True, service=obj).order_by(
+                "-created_at"
+            )[:7],
+            many=True,
+        ).data
 
     class Meta:
         model = ServiceModel
         exclude = ("is_active",)
+
 
 class RequestSerializer(serializers.ModelSerializer):
     class Meta:
