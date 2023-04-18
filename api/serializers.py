@@ -112,7 +112,12 @@ class ProjectListSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "image",
-            "name",
+            "name_ru",
+            "name_en",
+            "name_uz",
+            "description_ru",
+            "description_en",
+            "description_uz",
         )
 
 
