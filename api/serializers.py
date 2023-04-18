@@ -170,7 +170,7 @@ class ServiceListSerializer(serializers.ModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     category = ProjectCategorySerializer(many=False, read_only=True)
     similar_projects = ProjectListSerializer(many=True, read_only=True, source="get_similar_projects")
-    service = ServiceListSerializer(many=False, read_only=True)
+    service = ServiceListSerializer(many=True, read_only=True)
 
     class Meta:
         model = ProjectModel
