@@ -57,24 +57,8 @@ class NewsListSerializer(serializers.ModelSerializer):
 
 
 class NewsSerializer(serializers.ModelSerializer):
-    latest_news = serializers.SerializerMethodField()
-    popular_news = serializers.SerializerMethodField()
-
-    def get_popular_news(self, obj):
-        return NewsListSerializer(
-            NewsModel.objects.filter(is_active=True)
-            .exclude(id=obj.id)
-            .order_by("-views")[:5],
-            many=True,
-        ).data
-
-    def get_latest_news(self, obj):
-        return NewsListSerializer(
-            NewsModel.objects.filter(is_active=True)
-            .exclude(id=obj.id)
-            .order_by("-created_at")[:5],
-            many=True,
-        ).data
+    latest_news = NewsListSerializer(many=True, read_only=True, instance=NewsModel.objects.filter(is_active=True).order_by("-created_at")[:5])
+    popular_news = NewsListSerializer(many=True, read_only=True, instance=NewsModel.objects.filter(is_active=True).order_by("-views")[:5])
 
     class Meta:
         model = NewsModel
