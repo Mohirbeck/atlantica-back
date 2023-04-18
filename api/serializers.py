@@ -126,15 +126,7 @@ class ProjectListSerializer(serializers.ModelSerializer):
 
 class ProjectSerializer(serializers.ModelSerializer):
     category = ProjectCategorySerializer(many=False, read_only=True)
-    similar_projects = serializers.SerializerMethodField()
-
-    def get_similar_projects(self, obj):
-        projects = (
-            ProjectModel.objects.filter(is_active=True, category=obj.category)
-            .exclude(id=obj.id)
-            .order_by("-created_at")[:7]
-        )
-        return ProjectListSerializer(projects, many=True).data
+    similar_projects = ProjectListSerializer(many=True, read_only=True, source="get_similar_projects")
 
     class Meta:
         model = ProjectModel
@@ -183,15 +175,7 @@ class ServiceListSerializer(serializers.ModelSerializer):
 
 
 class ServiceSerializer(serializers.ModelSerializer):
-    projects = serializers.SerializerMethodField()
-
-    def get_projects(self, obj):
-        return ProjectListSerializer(
-            ProjectModel.objects.filter(is_active=True, service=obj).order_by(
-                "-created_at"
-            )[:7],
-            many=True,
-        ).data
+    projects = ProjectListSerializer(many=True, read_only=True, source="get_projects")
 
     class Meta:
         model = ServiceModel
