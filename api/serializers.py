@@ -14,7 +14,17 @@ from .models import (
     AboutUsModel,
 )
 from bs4 import BeautifulSoup
+from django.conf import settings
 
+SEARCH_PATTERN = 'src=\"/media/uploads/'
+REPLACE_WITH = 'src=\"%s/media/uploads/' % settings.BASE_URL
+
+
+class FixAbsolutePathSerializer(serializers.Field):
+
+    def to_representation(self, value):
+        text = value.replace(SEARCH_PATTERN, REPLACE_WITH)
+        return text
 
 class NewsListSerializer(serializers.ModelSerializer):
     description_ru = serializers.SerializerMethodField()
@@ -60,6 +70,9 @@ class NewsListSerializer(serializers.ModelSerializer):
 class NewsSerializer(serializers.ModelSerializer):
     latest_news = NewsListSerializer(many=True, read_only=True, source="get_latest_news")
     popular_news = NewsListSerializer(many=True, read_only=True, source="get_popular_news")
+    description_ru = FixAbsolutePathSerializer()
+    description_en = FixAbsolutePathSerializer()
+    description_uz = FixAbsolutePathSerializer()
 
     class Meta:
         model = NewsModel
@@ -172,6 +185,9 @@ class ProjectSerializer(serializers.ModelSerializer):
     category = ProjectCategorySerializer(many=False, read_only=True)
     similar_projects = ProjectListSerializer(many=True, read_only=True, source="get_similar_projects")
     service = ServiceListSerializer(many=True, read_only=True)
+    description_ru = FixAbsolutePathSerializer()
+    description_en = FixAbsolutePathSerializer()
+    description_uz = FixAbsolutePathSerializer()
 
     class Meta:
         model = ProjectModel
@@ -180,6 +196,9 @@ class ProjectSerializer(serializers.ModelSerializer):
 
 class ServiceSerializer(serializers.ModelSerializer):
     projects = ProjectListSerializer(many=True, read_only=True, source="get_projects")
+    description_ru = FixAbsolutePathSerializer()
+    description_en = FixAbsolutePathSerializer()
+    description_uz = FixAbsolutePathSerializer()
 
     class Meta:
         model = ServiceModel
@@ -228,6 +247,9 @@ class PartnerSerializer(serializers.ModelSerializer):
         exclude = ("is_active",)
 
 class AboutUsSerializer(serializers.ModelSerializer):
+    description_ru = FixAbsolutePathSerializer()
+    description_en = FixAbsolutePathSerializer()
+    description_uz = FixAbsolutePathSerializer()
     class Meta:
         model = AboutUsModel
         fields = "__all__"
