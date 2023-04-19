@@ -11,6 +11,7 @@ from .models import (
     ConsultModel,
     BlockModel,
     PartnerModel,
+    AboutUsModel,
 )
 from django.contrib.auth.models import Group, User
 from django.utils.translation import gettext_lazy as _
@@ -309,5 +310,30 @@ class PartnerAdmin(admin.ModelAdmin):
     def get_image(self, obj):
         return mark_safe(f'<img src="{obj.image.url}" width="75px">')
 
+@admin.register(AboutUsModel)
+class AboutUsAdmin(admin.ModelAdmin):
+    list_display = (
+        "id",
+        "title",
+        "created_at",
+        "updated_at",
+    )
+    list_display_links = ("id", "title")
+    search_fields = ("title", "description")
+    list_per_page = 25
+
+    fieldsets = (
+        (
+            _("Russian"),
+            {
+                "fields": (
+                    "title_ru",
+                    "description_ru",
+                )
+            },
+        ),
+        (_("English"), {"fields": ("title_en", "description_en")}),
+        (_("Uzbek"), {"fields": ("title_uz", "description_uz")}),
+    )
 
 # Path: api/serializers.py

@@ -16,4 +16,5 @@ urlpatterns = [
     path("consult/", views.ConsultListAPIView.as_view()),
     path("footer/", views.FooterListAPIView.as_view()),
     path('partners/', views.PartnerListAPIView.as_view()),
+    path('about/', views.AboutUsAPIView.as_view()),
 ]

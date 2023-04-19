@@ -8,7 +8,8 @@ from .models import (
     ReviewModel,
     ConsultModel,
     BlockModel,
-    BannerModel
+    BannerModel,
+    AboutUsModel,
 )
 
 
@@ -29,7 +30,7 @@ class ServiceTranslationOptions(TranslationOptions):
 
 
 class FooterTranslationOptions(TranslationOptions):
-    fields = ("text", )
+    fields = ("text",)
 
 
 class ReviewTranslationOptions(TranslationOptions):
@@ -43,9 +44,19 @@ class ConsultTranslationOptions(TranslationOptions):
 class BlockTranslationOptions(TranslationOptions):
     fields = ("title", "description")
 
+
 class BannerTranslationOptions(TranslationOptions):
-    fields = ("image", )
+    fields = ("image",)
     required_languages = ("ru", "en", "uz")
+
+
+class AboutUsTranslationOptions(TranslationOptions):
+    fields = (
+        "title",
+        "description",
+    )
+    required_languages = ("ru", "en", "uz")
+
 
 translator.register(NewsModel, NewsTranslationOptions)
 translator.register(ProjectModel, ProjectTranslationOptions)

@@ -273,3 +273,21 @@ class BlockModel(models.Model):
         if not self.pk and BlockModel.objects.exists():
             raise ValidationError("Может быть только один объект Блок")
         return super(BlockModel, self).save(*args, **kwargs)
+
+class AboutUsModel(models.Model):
+    title = models.CharField(max_length=255, verbose_name="Заголовок")
+    description = RichTextUploadingField(verbose_name="Описание", blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "О нас"
+        verbose_name_plural = "О нас"
+
+    def save(self, *args, **kwargs):
+        if not self.pk and AboutUsModel.objects.exists():
+            raise ValidationError("Может быть только один объект О нас")
+        return super(AboutUsModel, self).save(*args, **kwargs)

@@ -12,6 +12,7 @@ from .models import (
     ConsultModel,
     FooterModel,
     PartnerModel,
+    AboutUsModel,
 )
 from .serializers import (
     NewsSerializer,
@@ -27,6 +28,7 @@ from .serializers import (
     ConsultSerializer,
     FooterSerializer,
     PartnerSerializer,
+    AboutUsSerializer,
 )
 from rest_framework.pagination import LimitOffsetPagination
 
@@ -46,12 +48,14 @@ class NewsDetailAPIView(RetrieveAPIView):
     queryset = NewsModel.objects.filter(is_active=True)
     serializer_class = NewsSerializer
 
+
 @api_view(["POST"])
 def news_view_count(request, pk):
     news = NewsModel.objects.get(pk=pk)
     news.views += 1
     news.save()
     return Response({"views": news.views})
+
 
 class ProjectListAPIView(ListAPIView):
     queryset = ProjectModel.objects.filter(is_active=True)
@@ -84,25 +88,35 @@ class BannerListAPIView(ListAPIView):
     queryset = BannerModel.objects.filter(is_active=True).order_by("order")
     serializer_class = BannerSerializer
 
+
 class BlockListAPIView(ListAPIView):
     queryset = BlockModel.objects.all()
     serializer_class = BlockSerializer
+
 
 class ReviewListAPIView(ListAPIView):
     queryset = ReviewModel.objects.filter(is_active=True)
     serializer_class = ReviewSerializer
 
+
 class ConsultListAPIView(ListAPIView):
     queryset = ConsultModel.objects.all()
     serializer_class = ConsultSerializer
+
 
 class FooterListAPIView(ListAPIView):
     queryset = FooterModel.objects.all()
     serializer_class = FooterSerializer
 
+
 class PartnerListAPIView(ListAPIView):
     queryset = PartnerModel.objects.filter(is_active=True)
     serializer_class = PartnerSerializer
+
+
+class AboutUsAPIView(ListAPIView):
+    queryset = AboutUsModel.objects.all()
+    serializer_class = AboutUsSerializer
 
 
 # Compare this snippet from api/urls.py:

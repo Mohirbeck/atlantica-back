@@ -11,6 +11,7 @@ from .models import (
     ConsultModel,
     FooterModel,
     PartnerModel,
+    AboutUsModel,
 )
 from bs4 import BeautifulSoup
 
@@ -225,3 +226,8 @@ class PartnerSerializer(serializers.ModelSerializer):
     class Meta:
         model = PartnerModel
         exclude = ("is_active",)
+
+class AboutUsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AboutUsModel
+        fields = "__all__"
