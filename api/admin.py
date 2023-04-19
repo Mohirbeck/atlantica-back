@@ -40,7 +40,7 @@ class NewsAdmin(admin.ModelAdmin):
             {"fields": ("title_ru", "description_ru", "image", "is_active")},
         ),
         (_("English"), {"fields": ("title_en", "description_en")}),
-        (_("Uzbek"), {"fields": ("title_uz", "description_uz")}),
+        (_("Chinese"), {"fields": ("title_zh", "description_zh")}),
     )
 
 
@@ -79,7 +79,7 @@ class ProjectAdmin(admin.ModelAdmin):
             },
         ),
         (_("English"), {"fields": ("name_en", "description_en", "client_en")}),
-        (_("Uzbek"), {"fields": ("name_uz", "description_uz", "client_uz")}),
+        (_("Chinese"), {"fields": ("name_zh", "description_zh", "client_zh")}),
     )
 
 
@@ -93,7 +93,7 @@ class ProjectCategoryAdmin(admin.ModelAdmin):
     fieldsets = (
         (_("Russian"), {"fields": ("name_ru",)}),
         (_("English"), {"fields": ("name_en",)}),
-        (_("Uzbek"), {"fields": ("name_uz",)}),
+        (_("Chinese"), {"fields": ("name_zh",)}),
     )
 
 
@@ -118,7 +118,7 @@ class ServiceAdmin(admin.ModelAdmin):
             {"fields": ("name_ru", "description_ru", "icon", "is_active")},
         ),
         (_("English"), {"fields": ("name_en", "description_en")}),
-        (_("Uzbek"), {"fields": ("name_uz", "description_uz")}),
+        (_("Chinese"), {"fields": ("name_zh", "description_zh")}),
     )
 
 
@@ -154,7 +154,7 @@ class BannerAdmin(admin.ModelAdmin):
             {"fields": ("image_ru", "link", "order", "is_active")},
         ),
         (_("English"), {"fields": ("image_en",)}),
-        (_("Uzbek"), {"fields": ("image_uz",)}),
+        (_("Chinese"), {"fields": ("image_zh",)}),
     )
 
     def image_tag(self, obj):
@@ -186,7 +186,7 @@ class FooterAdmin(admin.ModelAdmin):
             },
         ),
         (_("English"), {"fields": ("text_en",)}),
-        (_("Uzbek"), {"fields": ("text_uz",)}),
+        (_("Chinese"), {"fields": ("text_zh",)}),
     )
 
 
@@ -222,12 +222,12 @@ class ReviewAdmin(admin.ModelAdmin):
             },
         ),
         (
-            _("Uzbek"),
+            _("Chinese"),
             {
                 "fields": (
-                    "name_uz",
-                    "description_uz",
-                    "position_uz",
+                    "name_zh",
+                    "description_zh",
+                    "position_zh",
                 )
             },
         ),
@@ -258,7 +258,7 @@ class BlockAdmin(admin.ModelAdmin):
             },
         ),
         (_("English"), {"fields": ("title_en", "description_en")}),
-        (_("Uzbek"), {"fields": ("title_uz", "description_uz")}),
+        (_("Chinese"), {"fields": ("title_zh", "description_zh")}),
     )
 
 
@@ -288,7 +288,7 @@ class ConsultAdmin(admin.ModelAdmin):
             },
         ),
         (_("English"), {"fields": ("title_en", "description_en")}),
-        (_("Uzbek"), {"fields": ("title_uz", "description_uz")}),
+        (_("Chinese"), {"fields": ("title_zh", "description_zh")}),
     )
 
 
@@ -333,7 +333,7 @@ class AboutUsAdmin(admin.ModelAdmin):
             },
         ),
         (_("English"), {"fields": ("title_en", "description_en")}),
-        (_("Uzbek"), {"fields": ("title_uz", "description_uz")}),
+        (_("Chinese"), {"fields": ("title_zh", "description_zh")}),
     )
 
 # Path: api/serializers.py

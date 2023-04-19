@@ -47,7 +47,7 @@ class BlockTranslationOptions(TranslationOptions):
 
 class BannerTranslationOptions(TranslationOptions):
     fields = ("image",)
-    required_languages = ("ru", "en", "uz")
+    required_languages = ("ru", "en", "zh")
 
 
 class AboutUsTranslationOptions(TranslationOptions):
@@ -55,7 +55,7 @@ class AboutUsTranslationOptions(TranslationOptions):
         "title",
         "description",
     )
-    required_languages = ("ru", "en", "uz")
+    required_languages = ("ru", "en", "zh")
 
 
 translator.register(NewsModel, NewsTranslationOptions)

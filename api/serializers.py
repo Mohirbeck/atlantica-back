@@ -29,7 +29,7 @@ class FixAbsolutePathSerializer(serializers.Field):
 class NewsListSerializer(serializers.ModelSerializer):
     description_ru = serializers.SerializerMethodField()
     description_en = serializers.SerializerMethodField()
-    description_uz = serializers.SerializerMethodField()
+    description_zh = serializers.SerializerMethodField()
 
     def get_description_ru(self, obj):
         if obj.description_ru is None or obj.description_ru == "":
@@ -49,10 +49,10 @@ class NewsListSerializer(serializers.ModelSerializer):
         else:
             return soup.text[:100]
 
-    def get_description_uz(self, obj):
-        if obj.description_uz is None or obj.description_uz == "":
+    def get_description_zh(self, obj):
+        if obj.description_zh is None or obj.description_zh == "":
             return ""
-        soup = BeautifulSoup(obj.description_uz, "html.parser")
+        soup = BeautifulSoup(obj.description_zh, "html.parser")
         if soup is None:
             return ""
         else:
@@ -72,7 +72,7 @@ class NewsSerializer(serializers.ModelSerializer):
     popular_news = NewsListSerializer(many=True, read_only=True, source="get_popular_news")
     description_ru = FixAbsolutePathSerializer()
     description_en = FixAbsolutePathSerializer()
-    description_uz = FixAbsolutePathSerializer()
+    description_zh = FixAbsolutePathSerializer()
 
     class Meta:
         model = NewsModel
@@ -92,7 +92,7 @@ class ProjectCategorySerializer(serializers.ModelSerializer):
 class ProjectListSerializer(serializers.ModelSerializer):
     description_ru = serializers.SerializerMethodField()
     description_en = serializers.SerializerMethodField()
-    description_uz = serializers.SerializerMethodField()
+    description_zh = serializers.SerializerMethodField()
 
     def get_description_ru(self, obj):
         if obj.description_ru is None or obj.description_ru == "":
@@ -112,10 +112,10 @@ class ProjectListSerializer(serializers.ModelSerializer):
         else:
             return soup.text[:100]
 
-    def get_description_uz(self, obj):
-        if obj.description_uz is None or obj.description_uz == "":
+    def get_description_zh(self, obj):
+        if obj.description_zh is None or obj.description_zh == "":
             return ""
-        soup = BeautifulSoup(obj.description_uz, "html.parser")
+        soup = BeautifulSoup(obj.description_zh, "html.parser")
         if soup.text is None or soup.text == "":
             return ""
         else:
@@ -134,7 +134,7 @@ class ProjectListSerializer(serializers.ModelSerializer):
             "client",
             "client_ru",
             "client_en",
-            "client_uz",
+            "client_zh",
         )
 
 
@@ -142,7 +142,7 @@ class ProjectListSerializer(serializers.ModelSerializer):
 class ServiceListSerializer(serializers.ModelSerializer):
     description_ru = serializers.SerializerMethodField()
     description_en = serializers.SerializerMethodField()
-    description_uz = serializers.SerializerMethodField()
+    description_zh = serializers.SerializerMethodField()
 
     def get_description_ru(self, obj):
         if obj.description_ru is None or obj.description_ru == "":
@@ -162,10 +162,10 @@ class ServiceListSerializer(serializers.ModelSerializer):
         else:
             return soup.text[:100]
 
-    def get_description_uz(self, obj):
-        if obj.description_uz is None or obj.description_uz == "":
+    def get_description_zh(self, obj):
+        if obj.description_zh is None or obj.description_zh == "":
             return ""
-        soup = BeautifulSoup(obj.description_uz, "html.parser")
+        soup = BeautifulSoup(obj.description_zh, "html.parser")
         if soup is None:
             return ""
         else:
@@ -187,7 +187,7 @@ class ProjectSerializer(serializers.ModelSerializer):
     service = ServiceListSerializer(many=True, read_only=True)
     description_ru = FixAbsolutePathSerializer()
     description_en = FixAbsolutePathSerializer()
-    description_uz = FixAbsolutePathSerializer()
+    description_zh = FixAbsolutePathSerializer()
 
     class Meta:
         model = ProjectModel
@@ -198,7 +198,7 @@ class ServiceSerializer(serializers.ModelSerializer):
     projects = ProjectListSerializer(many=True, read_only=True, source="get_projects")
     description_ru = FixAbsolutePathSerializer()
     description_en = FixAbsolutePathSerializer()
-    description_uz = FixAbsolutePathSerializer()
+    description_zh = FixAbsolutePathSerializer()
 
     class Meta:
         model = ServiceModel
@@ -249,7 +249,7 @@ class PartnerSerializer(serializers.ModelSerializer):
 class AboutUsSerializer(serializers.ModelSerializer):
     description_ru = FixAbsolutePathSerializer()
     description_en = FixAbsolutePathSerializer()
-    description_uz = FixAbsolutePathSerializer()
+    description_zh = FixAbsolutePathSerializer()
     class Meta:
         model = AboutUsModel
         fields = "__all__"
