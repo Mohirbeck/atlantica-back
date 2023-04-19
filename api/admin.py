@@ -98,7 +98,14 @@ class ProjectCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(ServiceModel)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "created_at", "updated_at", "is_active", "icon", )
+    list_display = (
+        "id",
+        "name",
+        "created_at",
+        "updated_at",
+        "is_active",
+        "icon",
+    )
     list_display_links = ("id", "name")
     list_filter = ("is_active",)
     search_fields = ("name", "description")
@@ -125,13 +132,17 @@ class RequestAdmin(admin.ModelAdmin):
 @admin.register(BannerModel)
 class BannerAdmin(admin.ModelAdmin):
     list_display = (
+        "id",
         "image_tag",
         "order",
         "created_at",
         "updated_at",
         "is_active",
     )
-    list_display_links = ("image_tag",)
+    list_display_links = (
+        "id",
+        "image_tag",
+    )
     list_filter = ("is_active",)
     list_editable = ("order",)
     list_per_page = 25
