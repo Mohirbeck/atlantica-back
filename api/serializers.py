@@ -175,8 +175,6 @@ class ServiceListSerializer(serializers.ModelSerializer):
         model = ServiceModel
         exclude = (
             "is_active",
-            "name",
-            "description",
         )
 
 
