@@ -22,8 +22,8 @@ from django.utils.safestring import mark_safe
 admin.site.site_header = "Atlantica Admin"
 admin.site.site_title = "Atlantica Admin Portal"
 admin.site.index_title = "Welcome to Atlantica Admin Portal"
-admin.site.unregister(Group)
-admin.site.unregister(User)
+# admin.site.unregister(Group)
+# admin.site.unregister(User)
 
 
 @admin.register(NewsModel)
