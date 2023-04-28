@@ -14,11 +14,11 @@ from .models import (
 
 
 class NewsTranslationOptions(TranslationOptions):
-    fields = ("title", "description")
+    fields = ("title", "description", "short_description")
 
 
 class ProjectTranslationOptions(TranslationOptions):
-    fields = ("name", "description", "client")
+    fields = ("name", "description", "client", "short_description")
 
 
 class ProjectCategoryTranslationOptions(TranslationOptions):
@@ -26,7 +26,7 @@ class ProjectCategoryTranslationOptions(TranslationOptions):
 
 
 class ServiceTranslationOptions(TranslationOptions):
-    fields = ("name", "description")
+    fields = ("name", "description", "short_description")
 
 
 class FooterTranslationOptions(TranslationOptions):

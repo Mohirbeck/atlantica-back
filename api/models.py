@@ -15,6 +15,7 @@ class ServiceModel(models.Model):
     description = RichTextUploadingField(
         verbose_name="Описание услуги", blank=True, null=True
     )
+    short_description = models.TextField(null=True, blank=True, default="", verbose_name="Краткое описание")
     icon = models.FileField(
         upload_to="services",
         verbose_name="Иконка услуги",
@@ -50,6 +51,7 @@ class ProjectModel(models.Model):
     description = RichTextUploadingField(
         verbose_name="Описание проекта", blank=True, null=True
     )
+    short_description = models.TextField(null=True, blank=True, default="", verbose_name="Краткое описание")
     image = models.ImageField(
         upload_to="projects", verbose_name="Изображение проекта", blank=True, null=True
     )
@@ -104,6 +106,7 @@ class ProjectCategoryModel(models.Model):
 class NewsModel(models.Model):
     title = models.CharField(max_length=255, verbose_name="Заголовок")
     description = RichTextUploadingField(verbose_name="Описание", blank=True, null=True)
+    short_description = models.TextField(null=True, blank=True, default="", verbose_name="Краткое описание")
     image = models.ImageField(
         upload_to="news", verbose_name="Изображение", blank=True, null=True
     )

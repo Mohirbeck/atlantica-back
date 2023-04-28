@@ -27,42 +27,43 @@ class FixAbsolutePathSerializer(serializers.Field):
         return text
 
 class NewsListSerializer(serializers.ModelSerializer):
-    description_ru = serializers.SerializerMethodField()
-    description_en = serializers.SerializerMethodField()
-    description_zh = serializers.SerializerMethodField()
+    # description_ru = serializers.SerializerMethodField()
+    # description_en = serializers.SerializerMethodField()
+    # description_zh = serializers.SerializerMethodField()
 
-    def get_description_ru(self, obj):
-        if obj.description_ru is None or obj.description_ru == "":
-            return ""
-        soup = BeautifulSoup(obj.description_ru, "html.parser")
-        if soup is None:
-            return ""
-        else:
-            return soup.text[:100]
+    # def get_description_ru(self, obj):
+    #     if obj.description_ru is None or obj.description_ru == "":
+    #         return ""
+    #     soup = BeautifulSoup(obj.description_ru, "html.parser")
+    #     if soup is None:
+    #         return ""
+    #     else:
+    #         return soup.text[:100]
 
-    def get_description_en(self, obj):
-        if obj.description_en is None or obj.description_en == "":
-            return ""
-        soup = BeautifulSoup(obj.description_en, "html.parser")
-        if soup is None:
-            return ""
-        else:
-            return soup.text[:100]
+    # def get_description_en(self, obj):
+    #     if obj.description_en is None or obj.description_en == "":
+    #         return ""
+    #     soup = BeautifulSoup(obj.description_en, "html.parser")
+    #     if soup is None:
+    #         return ""
+    #     else:
+    #         return soup.text[:100]
 
-    def get_description_zh(self, obj):
-        if obj.description_zh is None or obj.description_zh == "":
-            return ""
-        soup = BeautifulSoup(obj.description_zh, "html.parser")
-        if soup is None:
-            return ""
-        else:
-            return soup.text[:100]
+    # def get_description_zh(self, obj):
+    #     if obj.description_zh is None or obj.description_zh == "":
+    #         return ""
+    #     soup = BeautifulSoup(obj.description_zh, "html.parser")
+    #     if soup is None:
+    #         return ""
+    #     else:
+    #         return soup.text[:100]
 
     class Meta:
         model = NewsModel
         exclude = (
             "is_active",
             "description",
+            "short_description",
             "title",
         )
 
@@ -90,42 +91,43 @@ class ProjectCategorySerializer(serializers.ModelSerializer):
 
 
 class ProjectListSerializer(serializers.ModelSerializer):
-    description_ru = serializers.SerializerMethodField()
-    description_en = serializers.SerializerMethodField()
-    description_zh = serializers.SerializerMethodField()
+    # description_ru = serializers.SerializerMethodField()
+    # description_en = serializers.SerializerMethodField()
+    # description_zh = serializers.SerializerMethodField()
 
-    def get_description_ru(self, obj):
-        if obj.description_ru is None or obj.description_ru == "":
-            return ""
-        soup = BeautifulSoup(obj.description_ru, "html.parser")
-        if soup.text is None or soup.text == "":
-            return ""
-        else:
-            return soup.text[:100]
+    # def get_description_ru(self, obj):
+    #     if obj.description_ru is None or obj.description_ru == "":
+    #         return ""
+    #     soup = BeautifulSoup(obj.description_ru, "html.parser")
+    #     if soup.text is None or soup.text == "":
+    #         return ""
+    #     else:
+    #         return soup.text[:100]
 
-    def get_description_en(self, obj):
-        if obj.description_en is None or obj.description_en == "":
-            return ""
-        soup = BeautifulSoup(obj.description_en, "html.parser")
-        if soup.text is None or soup.text == "":
-            return ""
-        else:
-            return soup.text[:100]
+    # def get_description_en(self, obj):
+    #     if obj.description_en is None or obj.description_en == "":
+    #         return ""
+    #     soup = BeautifulSoup(obj.description_en, "html.parser")
+    #     if soup.text is None or soup.text == "":
+    #         return ""
+    #     else:
+    #         return soup.text[:100]
 
-    def get_description_zh(self, obj):
-        if obj.description_zh is None or obj.description_zh == "":
-            return ""
-        soup = BeautifulSoup(obj.description_zh, "html.parser")
-        if soup.text is None or soup.text == "":
-            return ""
-        else:
-            return soup.text[:100]
+    # def get_description_zh(self, obj):
+    #     if obj.description_zh is None or obj.description_zh == "":
+    #         return ""
+    #     soup = BeautifulSoup(obj.description_zh, "html.parser")
+    #     if soup.text is None or soup.text == "":
+    #         return ""
+    #     else:
+    #         return soup.text[:100]
 
     class Meta:
         model = ProjectModel
         exclude = (
             "is_active",
             "description",
+            "short_description",
             "name",
             "service",
             "category",
@@ -140,41 +142,43 @@ class ProjectListSerializer(serializers.ModelSerializer):
 
 
 class ServiceListSerializer(serializers.ModelSerializer):
-    description_ru = serializers.SerializerMethodField()
-    description_en = serializers.SerializerMethodField()
-    description_zh = serializers.SerializerMethodField()
+    # description_ru = serializers.SerializerMethodField()
+    # description_en = serializers.SerializerMethodField()
+    # description_zh = serializers.SerializerMethodField()
 
-    def get_description_ru(self, obj):
-        if obj.description_ru is None or obj.description_ru == "":
-            return ""
-        soup = BeautifulSoup(obj.description_ru, "html.parser")
-        if soup is None:
-            return ""
-        else:
-            return soup.text[:100]
+    # def get_description_ru(self, obj):
+    #     if obj.description_ru is None or obj.description_ru == "":
+    #         return ""
+    #     soup = BeautifulSoup(obj.description_ru, "html.parser")
+    #     if soup is None:
+    #         return ""
+    #     else:
+    #         return soup.text[:100]
 
-    def get_description_en(self, obj):
-        if obj.description_en is None or obj.description_en == "":
-            return ""
-        soup = BeautifulSoup(obj.description_en, "html.parser")
-        if soup is None:
-            return ""
-        else:
-            return soup.text[:100]
+    # def get_description_en(self, obj):
+    #     if obj.description_en is None or obj.description_en == "":
+    #         return ""
+    #     soup = BeautifulSoup(obj.description_en, "html.parser")
+    #     if soup is None:
+    #         return ""
+    #     else:
+    #         return soup.text[:100]
 
-    def get_description_zh(self, obj):
-        if obj.description_zh is None or obj.description_zh == "":
-            return ""
-        soup = BeautifulSoup(obj.description_zh, "html.parser")
-        if soup is None:
-            return ""
-        else:
-            return soup.text[:100]
+    # def get_description_zh(self, obj):
+    #     if obj.description_zh is None or obj.description_zh == "":
+    #         return ""
+    #     soup = BeautifulSoup(obj.description_zh, "html.parser")
+    #     if soup is None:
+    #         return ""
+    #     else:
+    #         return soup.text[:100]
 
     class Meta:
         model = ServiceModel
         exclude = (
             "is_active",
+            "short_description",
+            "description"
         )
 
 
