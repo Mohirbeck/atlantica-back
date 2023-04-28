@@ -37,10 +37,24 @@ class NewsAdmin(admin.ModelAdmin):
     fieldsets = (
         (
             _("Russian"),
-            {"fields": ("title_ru", "description_ru", "image", "is_active")},
+            {
+                "fields": (
+                    "title_ru",
+                    "description_ru",
+                    "short_description_ru",
+                    "image",
+                    "is_active",
+                )
+            },
         ),
-        (_("English"), {"fields": ("title_en", "description_en")}),
-        (_("Chinese"), {"fields": ("title_zh", "description_zh")}),
+        (
+            _("English"),
+            {"fields": ("title_en", "description_en", "short_description_en")},
+        ),
+        (
+            _("Chinese"),
+            {"fields": ("title_zh", "description_zh", "short_description_zh")},
+        ),
     )
 
 
@@ -68,6 +82,7 @@ class ProjectAdmin(admin.ModelAdmin):
                 "fields": (
                     "name_ru",
                     "description_ru",
+                    "short_description_ru",
                     "client_ru",
                     "image",
                     "category",
@@ -78,8 +93,28 @@ class ProjectAdmin(admin.ModelAdmin):
                 )
             },
         ),
-        (_("English"), {"fields": ("name_en", "description_en", "client_en")}),
-        (_("Chinese"), {"fields": ("name_zh", "description_zh", "client_zh")}),
+        (
+            _("English"),
+            {
+                "fields": (
+                    "name_en",
+                    "description_en",
+                    "short_description_en",
+                    "client_en",
+                )
+            },
+        ),
+        (
+            _("Chinese"),
+            {
+                "fields": (
+                    "name_zh",
+                    "description_zh",
+                    "short_description_zh",
+                    "client_zh",
+                )
+            },
+        ),
     )
 
 
@@ -115,10 +150,24 @@ class ServiceAdmin(admin.ModelAdmin):
     fieldsets = (
         (
             _("Russian"),
-            {"fields": ("name_ru", "description_ru", "icon", "is_active")},
+            {
+                "fields": (
+                    "name_ru",
+                    "description_ru",
+                    "short_description_ru",
+                    "icon",
+                    "is_active",
+                )
+            },
         ),
-        (_("English"), {"fields": ("name_en", "description_en")}),
-        (_("Chinese"), {"fields": ("name_zh", "description_zh")}),
+        (
+            _("English"),
+            {"fields": ("name_en", "description_en", "short_description_en")},
+        ),
+        (
+            _("Chinese"),
+            {"fields": ("name_zh", "description_zh", "short_description_zh")},
+        ),
     )
 
 
@@ -310,6 +359,7 @@ class PartnerAdmin(admin.ModelAdmin):
     def get_image(self, obj):
         return mark_safe(f'<img src="{obj.image.url}" width="75px">')
 
+
 @admin.register(AboutUsModel)
 class AboutUsAdmin(admin.ModelAdmin):
     list_display = (
@@ -335,5 +385,6 @@ class AboutUsAdmin(admin.ModelAdmin):
         (_("English"), {"fields": ("title_en", "description_en")}),
         (_("Chinese"), {"fields": ("title_zh", "description_zh")}),
     )
+
 
 # Path: api/serializers.py
