@@ -143,7 +143,7 @@ class RequestModel(models.Model):
     name = models.CharField(max_length=255, verbose_name="Имя")
     email = models.EmailField(verbose_name="Email")
     phone = models.CharField(max_length=255, verbose_name="Телефон")
-    message = models.TextField(verbose_name="Сообщение")
+    message = models.TextField(verbose_name="Сообщение", blank=True, null=True)
     type = models.CharField(max_length=255, verbose_name="Тип")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
