@@ -134,6 +134,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
+        # 'rest_framework.authentication.SessionAuthentication',
+    ]
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -145,7 +151,11 @@ LANGUAGES = [
     ("en", _("English")),
     ("zh-hans", _("Simplified Chinese")),
 ]
-MODELTRANSLATION_LANGUAGES = ('ru', 'en', 'zh', )
+MODELTRANSLATION_LANGUAGES = (
+    "ru",
+    "en",
+    "zh",
+)
 
 TIME_ZONE = "Asia/Tashkent"
 
