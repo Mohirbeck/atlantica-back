@@ -1,0 +1,294 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-30 17:07+0500\n"
+"PO-Revision-Date: 2023-05-30 17:07+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.1\n"
+
+#: api/admin.py:39 api/admin.py:80 api/admin.py:129 api/admin.py:152
+#: api/admin.py:202 api/admin.py:225 api/admin.py:252 api/admin.py:300
+#: api/admin.py:328 api/admin.py:377 config/settings.py:150
+msgid "Russian"
+msgstr ""
+
+#: api/admin.py:51 api/admin.py:97 api/admin.py:130 api/admin.py:164
+#: api/admin.py:205 api/admin.py:237 api/admin.py:264 api/admin.py:309
+#: api/admin.py:339 api/admin.py:385 config/settings.py:151
+msgid "English"
+msgstr ""
+
+#: api/admin.py:55 api/admin.py:108 api/admin.py:131 api/admin.py:168
+#: api/admin.py:206 api/admin.py:238 api/admin.py:274 api/admin.py:310
+#: api/admin.py:340 api/admin.py:386
+msgid "Chinese"
+msgstr ""
+
+#: api/models.py:11
+msgid "Только SVG файлы"
+msgstr "SVG files only"
+
+#: api/models.py:15
+msgid "Название услуги"
+msgstr "Services Name"
+
+#: api/models.py:17
+msgid "Описание услуги"
+msgstr "Service description"
+
+#: api/models.py:20 api/models.py:60 api/models.py:132
+msgid "Краткое описание"
+msgstr "Short description"
+
+#: api/models.py:24
+msgid "Иконка услуги"
+msgstr "Service icon"
+
+#: api/models.py:31 api/models.py:90 api/models.py:114 api/models.py:139
+#: api/models.py:175 api/models.py:193 api/models.py:213 api/models.py:234
+#: api/models.py:281 api/models.py:304 api/models.py:327
+msgid "Дата создания"
+msgstr "Created date"
+
+#: api/models.py:33 api/models.py:92 api/models.py:116 api/models.py:141
+#: api/models.py:177 api/models.py:195 api/models.py:215 api/models.py:236
+#: api/models.py:283 api/models.py:306 api/models.py:329
+msgid "Дата обновления"
+msgstr "Updated date"
+
+#: api/models.py:34 api/models.py:93 api/models.py:142 api/models.py:196
+#: api/models.py:216 api/models.py:237
+msgid "Активность"
+msgstr "Is active"
+
+#: api/models.py:46 api/models.py:79
+msgid "Услуга"
+msgstr "Service"
+
+#: api/models.py:47
+msgid "Услуги"
+msgstr "Services"
+
+#: api/models.py:55
+msgid "Название проекта"
+msgstr "Project name"
+
+#: api/models.py:57
+msgid "Описание проекта"
+msgstr "Project description"
+
+#: api/models.py:64
+msgid "Изображение проекта"
+msgstr "Project image"
+
+#: api/models.py:69
+msgid "Клиент"
+msgstr "Client"
+
+#: api/models.py:74
+msgid "Категория"
+msgstr "Category"
+
+#: api/models.py:81
+msgid "Дата"
+msgstr "Date"
+
+#: api/models.py:85
+msgid "Статус"
+msgstr "Status"
+
+#: api/models.py:107
+msgid "Проект"
+msgstr "Project"
+
+#: api/models.py:108
+msgid "Проекты"
+msgstr "Projects"
+
+#: api/models.py:112
+msgid "Название категории"
+msgstr "Category name"
+
+#: api/models.py:122
+msgid "Категория проекта"
+msgstr "Project category"
+
+#: api/models.py:123
+msgid "Категории проектов"
+msgstr "Projects Cateogries"
+
+#: api/models.py:127 api/models.py:277 api/models.py:299 api/models.py:322
+msgid "Заголовок"
+msgstr "Title"
+
+#: api/models.py:129 api/models.py:278 api/models.py:300 api/models.py:324
+msgid "Описание"
+msgstr "Description"
+
+#: api/models.py:135 api/models.py:191 api/models.py:210 api/models.py:302
+msgid "Изображение"
+msgstr "Image"
+
+#: api/models.py:137
+msgid "Просмотры"
+msgstr "Views"
+
+#: api/models.py:164
+msgid "Новость"
+msgstr "News"
+
+#: api/models.py:165
+msgid "Новости"
+msgstr "News"
+
+#: api/models.py:169 api/models.py:208
+msgid "Имя"
+msgstr "Name"
+
+#: api/models.py:170 api/models.py:249
+msgid "Email"
+msgstr "Email"
+
+#: api/models.py:171 api/models.py:248
+msgid "Телефон"
+msgstr "Phone"
+
+#: api/models.py:172
+msgid "Сообщение"
+msgstr "Message"
+
+#: api/models.py:173
+msgid "Тип"
+msgstr "Type"
+
+#: api/models.py:183
+msgid "Заявка"
+msgstr "Request"
+
+#: api/models.py:184
+msgid "Заявки"
+msgstr "Requests"
+
+#: api/models.py:189 api/models.py:279 api/models.py:301
+msgid "Ссылка"
+msgstr "Link"
+
+#: api/models.py:197
+msgid "Порядок"
+msgstr "Order"
+
+#: api/models.py:203
+msgid "Баннер"
+msgstr "Banner"
+
+#: api/models.py:204
+msgid "Баннеры"
+msgstr "Banners"
+
+#: api/models.py:209
+msgid "Должность"
+msgstr "Job title"
+
+#: api/models.py:211 api/models.py:222
+msgid "Отзыв"
+msgstr "Review"
+
+#: api/models.py:223
+msgid "Отзывы"
+msgstr "Reviews"
+
+#: api/models.py:228
+msgid "Название партнера"
+msgstr "Partner name"
+
+#: api/models.py:231
+msgid "Изображение партнера"
+msgstr "Partner image"
+
+#: api/models.py:243
+msgid "Партнер"
+msgstr "Partner"
+
+#: api/models.py:244
+msgid "Партнеры"
+msgstr "Partners"
+
+#: api/models.py:250
+msgid "Текст"
+msgstr "Text"
+
+#: api/models.py:252
+msgid "Ссылка на linkedin"
+msgstr "Link to linkedin"
+
+#: api/models.py:255
+msgid "Ссылка на facebook"
+msgstr "Link to facebook"
+
+#: api/models.py:258
+msgid "Ссылка на twitter"
+msgstr "Link to twitter"
+
+#: api/models.py:265 api/models.py:266
+msgid "Футер"
+msgstr "Footer"
+
+#: api/models.py:270
+msgid "Может быть только один объект Футер"
+msgstr "There can only be one Footer object"
+
+#: api/models.py:275
+msgid "Изображение 1"
+msgstr "Image 1"
+
+#: api/models.py:276
+msgid "Изображение 2"
+msgstr "Image 2"
+
+#: api/models.py:289
+msgid "Консультация"
+msgstr "Consultation"
+
+#: api/models.py:290
+msgid "Консультации"
+msgstr "Consultations"
+
+#: api/models.py:294
+msgid "Может быть только один объект Консультация"
+msgstr "There can only be one Consultation object"
+
+#: api/models.py:312
+msgid "Блок"
+msgstr "Block"
+
+#: api/models.py:313
+msgid "Блоки"
+msgstr "Blocks"
+
+#: api/models.py:317
+msgid "Может быть только один объект Блок"
+msgstr "There can only be one Block object"
+
+#: api/models.py:335 api/models.py:336
+msgid "О нас"
+msgstr "About us"
+
+#: api/models.py:340
+msgid "Может быть только один объект О нас"
+msgstr "There can only be one About us object"
+
+#: config/settings.py:152
+msgid "Simplified Chinese"
+msgstr ""

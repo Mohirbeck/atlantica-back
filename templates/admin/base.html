@@ -1,0 +1,13 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+{% block userlinks %}
+{{ block.super }}
+<a href="#">
+    <span onclick="window.location.href = '/en/admin/'">
+        <img src="https://flagsapi.com/US/flat/24.png">
+    </span>
+    <span onclick="window.location.href = '/ru/admin/'">
+        <img src="https://flagsapi.com/RU/flat/24.png">
+    </span>
+</a>
+{% endblock %}
